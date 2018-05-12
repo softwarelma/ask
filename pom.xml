@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.alten</groupId>
+    <artifactId>ask</artifactId>
+    <version>1.0.1</version>
+    <!-- <packaging>jar</packaging> default -->
+    <name>ask</name>
+    <description>Alten Shopping C(K)art</description>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.5.RELEASE</version>
+        <!-- <relativePath/> not mandatory, to override local and remote 
+            repositories -->
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding><!-- 
+            nice to have -->
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency><!-- jpa -->
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+        <dependency><!-- h2 -->
+            <groupId>com.h2database</groupId>
+            <artifactId>h2</artifactId>
+        </dependency>
+        <dependency><!-- mail -->
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <!-- <version>1.5.3</version> -->
+        </dependency>
+        <dependency><!-- mail -->
+            <groupId>com.sun.mail</groupId>
+            <artifactId>javax.mail</artifactId>
+            <!-- <version>1.5.3</version> -->
+        </dependency>
+        <dependency><!-- vaadin -->
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-spring-boot-starter</artifactId>
+            <version>1.0.0.beta3</version>
+        </dependency>
+        <!-- <dependency> --><!-- junit -->
+        <!-- <groupId>org.springframework.boot</groupId> -->
+        <!-- <artifactId>spring-boot-starter-test</artifactId> -->
+        <!-- <scope>test</scope> -->
+        <!-- </dependency> -->
+        <dependency><!-- junit -->
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <!-- <version>4.12</version> -->
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-bom</artifactId>
+                <version>7.4.5</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <repositories>
+        <repository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
+        </repository>
+        <repository>
+            <id>org.jboss.repository.releases</id>
+            <name>JBoss Maven Release Repository</name>
+            <url>https://repository.jboss.org/nexus/content/repositories/releases</url>
+        </repository>
+    </repositories>
+
+    <pluginRepositories>
+        <pluginRepository>
+            <id>spring-releases</id>
+            <name>Spring Releases</name>
+            <url>https://repo.spring.io/libs-release</url>
+        </pluginRepository>
+    </pluginRepositories>
+
+</project>
